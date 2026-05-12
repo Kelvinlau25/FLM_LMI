@@ -1,0 +1,68 @@
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\FGATS.dll.config
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\FGATS.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\FGATS.pdb
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\csc.exe
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\csc.exe.config
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\csc.rsp
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\csi.exe
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\csi.rsp
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.AppContext.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.Collections.Immutable.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.IO.FileSystem.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\System.Reflection.Metadata.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\vbc.exe
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\vbc.exe.config
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\vbc.rsp
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\VBCSCompiler.exe
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\bin\roslyn\VBCSCompiler.exe.config
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\obj\Debug\PAB Berbual-Buah.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\obj\Debug\PAB Berbual-Buah.csproj.CoreCompileInputs.cache
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\obj\Debug\PAB Berbual-Buah.csproj.CopyComplete
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\obj\Debug\FGATS.dll
+D:\KSFoong\Source Code\MVC Template\1\PAB\FGATS\PAB\obj\Debug\FGATS.pdb
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\FGATS.dll.config
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\FGATS.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\FGATS.pdb
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\csc.exe
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\csc.exe.config
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\csc.rsp
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\csi.exe
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\csi.rsp
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.AppContext.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.Collections.Immutable.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.IO.FileSystem.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\System.Reflection.Metadata.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\vbc.exe
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\vbc.exe.config
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\vbc.rsp
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\VBCSCompiler.exe
+D:\KSFoong\Source Code\MVC\Template\PAB\bin\roslyn\VBCSCompiler.exe.config
+D:\KSFoong\Source Code\MVC\Template\PAB\obj\Debug\PAB Berbual-Buah.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\MVC\Template\PAB\obj\Debug\PAB Berbual-Buah.csproj.CoreCompileInputs.cache
+D:\KSFoong\Source Code\MVC\Template\PAB\obj\Debug\PAB Berbual-Buah.csproj.CopyComplete
+D:\KSFoong\Source Code\MVC\Template\PAB\obj\Debug\FGATS.dll
+D:\KSFoong\Source Code\MVC\Template\PAB\obj\Debug\FGATS.pdb

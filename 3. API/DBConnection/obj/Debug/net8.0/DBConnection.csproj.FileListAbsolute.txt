@@ -1,0 +1,11 @@
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.GeneratedMSBuildEditorConfig.editorconfig
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.AssemblyInfoInputs.cache
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.AssemblyInfo.cs
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.csproj.CoreCompileInputs.cache
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\bin\Debug\net8.0\DBConnection.deps.json
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\bin\Debug\net8.0\DBConnection.dll
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\bin\Debug\net8.0\DBConnection.pdb
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.dll
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\refint\DBConnection.dll
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\DBConnection.pdb
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\net8.0\ref\DBConnection.dll

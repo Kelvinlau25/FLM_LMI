@@ -1,0 +1,25 @@
+﻿@using MstMainModel
+@model MM_PRODUCTIVITY_TARGET
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date">Date</th>
+            <th class="target-input">Target F1</th>
+            <th class="target-input">Target F2</th>
+            <th class="target-input">Target F3</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_LMI_PRODUCTIVITY_TARGET)
+        {
+            <tr>
+                <td class="target-date">@item.SDATE.ToString("yyyy-MM-dd")</td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TARGET1" id="txtTarget_F1_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TARGET2" id="txtTarget_F2_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TARGET3" id="txtTarget_F3_@item.SDATE.ToString("yyyyMMdd")" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

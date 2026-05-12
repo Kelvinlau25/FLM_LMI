@@ -1,0 +1,364 @@
+﻿@using MstMainModel
+@model MM_TYPE
+
+@{
+    ViewBag.Title = "FILM TYPE LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 50% !important;
+        min-width: 50%;
+    }
+
+    .mediumDDL {
+        width: 80% !important;
+        min-width: 80%;
+    }
+
+    .table {
+        width: 30% !important;
+    }
+
+    .target-date {
+        width: 23.33% !important;
+        min-width: 23.33%;
+    }
+
+    .target-input {
+        width: 30% !important;
+        min-width: 30%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td button {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 90%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+        }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.1rem 0.3rem;
+        }
+</style>
+<h2>FILM TYPE LIST SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("FILM_TYPE_LIST", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div>
+                        @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@*@using (Html.BeginForm("FILM_TYPE_LIST_MAINT", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+    {*@
+<div class="form-horizontal">
+    @Html.Hidden("REC_TYPE", "1")
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">PERIOD :</label>
+        <div class="col-md-2">
+            @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">SEQ :</label>
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.SEQ, new { htmlAttributes = new { @class = "form-control mediumDDL onlyNumber" } })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">THICK :</label>
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.THICK, new { htmlAttributes = new { @class = "form-control mediumDDL" } })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">TYPE :</label>
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.TYPE, new { htmlAttributes = new { @class = "form-control mediumDDL" } })
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary" onclick="AddNew()">Add</button>
+        </div>
+    </div>
+</div>
+@*}*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" onClick="window.location.reload();">Refresh</button>
+        </div>
+    </div>
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            @*@grid.GetHtml(
+                       tableStyle: "table",
+                       headerStyle: "head",
+                       numericLinksCount: 5,
+                       mode: WebGridPagerModes.All,
+                       firstText: "First",
+                       previousText: "Previous",
+                       nextText: "Next",
+                       lastText: "Last",
+                       alternatingRowStyle: "alt",
+                       columns: grid.Columns(
+                            grid.Column("Plan", style: "target-input", format: @<text> <input class="onlyNumber" value="@item.PLAN" id="txtTarget_@(item.THICK)_@(item.TYPE)" /> </text>),
+
+                grid.Column("THICK", style: "target-date", format: @<text>@item.THICK</text>),
+                      grid.Column("TYPE", style: "target-date", format: @<text>@item.TYPE</text>),
+                     grid.Column("", style: "target-date", format: @<text> <button onclick="deleteType('@Model.FMMCCODE','@item.THICK','@item.TYPE')">Delete</button> </text>)
+                       )
+                       )*@
+
+            @{
+                Html.RenderPartial("_FilmTypeListPartial");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+
+    <br />
+    <br />
+</div>
+@{
+    if (ViewBag.Result != "" && ViewBag.Result != null)
+    {
+        <script type="text/javascript" language="javascript">
+            alert('@ViewBag.Result');
+        </script>
+    }
+}
+<script>
+
+
+    $(document).ready(function () {
+    document.getElementById('FMMCCODE').addEventListener('change', function () {
+        window.location.href = "@Url.Action("FILM_TYPE_LIST")" + "?FMMCCODE=" + this.value;
+    });
+    });
+    function deleteType(fmmcode, thick, type) {
+        console.log(fmmcode + '-' + thick + '-' + type)
+
+        var modelz = {
+            "SEQ":"0",
+            "THICK": thick,
+            "TYPE": type,
+            "FMMCCODE": fmmcode,
+            "REC_TYPE":"5"
+        }
+
+        $.ajax({
+		        url: "@Url.Action("FILM_TYPE_LIST_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(modelz),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+            success: function (data) {
+                    console.log(data)
+                    if (data.RESULT == "OK") {
+                        console.log(data);
+                        alert("Record save successfully.");
+
+                        window.location.href = "@Url.Action("FILM_TYPE_LIST")" + "?FMMCCODE=" + data.FMMCODE;
+                    }
+		        }
+        });
+    }
+
+    function AddNew() {
+
+        var fmmcode = document.getElementById('FMMCCODE').value;
+        var seq = document.getElementById('SEQ').value;
+        var thick = document.getElementById('THICK').value;
+        var type = document.getElementById('TYPE').value;
+
+
+        if (!document.getElementById('FMMCCODE').value ||
+            !document.getElementById('SEQ').value ||
+            !document.getElementById('THICK').value ||
+            !document.getElementById('TYPE').value) {
+
+            alert("Input value is empty!")
+            return;
+        }
+
+
+        var modelz = {
+            FMMCCODE: fmmcode,
+            SEQ: seq,
+            THICK: thick,
+            TYPE: type,
+            REC_TYPE:"1",
+            LIST_LMI_TYPE: []
+        }
+
+        console.log(modelz)
+
+        $.ajax({
+		        url: "@Url.Action("FILM_TYPE_LIST_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(modelz),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+            success: function (data) {
+                console.log(data)
+                    if (data.RESULT == "OK") {
+                        console.log(data);
+                        alert("Record saved successfully.");
+                        window.location.href = "@Url.Action("FILM_TYPE_LIST")" + "?FMMCCODE=" + data.FMMCODE;
+                    }
+                //console.log(data)
+                //$('#grid').html(data)
+		        }
+        });
+    }
+
+    function submitForm() {
+
+        var THICK_TYPE = new Array();
+        var THICK = new Array();
+        var TYPE = new Array();
+        var PLAN = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var thick = split[1];
+                    var type = split[2];
+
+                    if (THICK_TYPE.indexOf(thick+'_'+type) === -1) {
+                        THICK_TYPE.push(thick + '_' + type);
+                    }
+
+                    PLAN.push(oInputs[i].value);
+                }
+            }
+        }
+        var error = 'N';
+        var LIST_LMI_TYPE = new Array();
+
+        for (var i = 0; i < THICK_TYPE.length; i++) {
+            var split = THICK_TYPE[i].split('_');
+            var thick = split[0];
+            var type = split[1];
+            THICK.push(thick);
+            TYPE.push(type);
+        }
+
+        for (i = 0; i < THICK_TYPE.length; i++) {
+            var json = {
+                "THICK": THICK[i],
+                "TYPE": TYPE[i],
+                "PLAN": PLAN[i]
+            }
+
+            LIST_LMI_TYPE.push(json);
+        }
+
+        var modelz = {
+            "FMMCCODE": "@Model.FMMCCODE",
+            "REC_TYPE":"3",
+            "LIST_LMI_TYPE": LIST_LMI_TYPE
+        }
+
+        console.log(modelz)
+
+        $.ajax({
+		        url: "@Url.Action("FILM_TYPE_LIST_MAINT2")",
+		        type: "POST",
+            data: JSON.stringify(modelz),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+            success: function (data) {
+                console.log(data)
+                    if (data.RESULT == "OK") {
+                        console.log(data);
+                        alert("Record saved successfully.");
+                        return;
+                    }
+		        }
+        });
+
+        //if (error == 'N') {
+        //    alert('Record save successfully.');
+        //} else {
+        //    alert('Record failed to save.');
+        //}
+    }
+</script>

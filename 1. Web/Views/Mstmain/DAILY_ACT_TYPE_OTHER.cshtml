@@ -1,0 +1,269 @@
+﻿@using MstMainModel
+@model MM_DAILY_ACT_TYPE_OTHER
+
+@{
+    ViewBag.Title = "FILM DAILY ACT TYPE OTHER LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 35%;
+    }
+
+    .table {
+        width: 40% !important;
+    }
+
+    .target-date {
+        width: 15% !important;
+        min-width: 15%;
+    }
+
+    .target-input {
+        width: 23.33% !important;
+        min-width: 23.33%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.1rem;
+            margin: 0.1rem 0.2rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>FILM DAILY ACT TYPE OTHER LIST SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("DAILY_ACT_TYPE_OTHER", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div class="row">
+                        @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                    </div>
+                    <div class="row">
+                        @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("DAILY_ACT_TYPE_OTHER", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-2 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="FMMCCODE" class="col-md-2 control-label" style="padding-right:0px;padding-left:0px">FMMCCODE :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    @*<div class="form-group">
+            <div class="col-md-offset-1 col-md-3">
+                <button type="submit" class="btn btn-primary">View</button>
+            </div>
+        </div>*@
+}
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            @{
+                Html.RenderPartial("_DailyActTypeOtherPartial");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<script>
+    var getNewDataTimer = null;
+
+    function getNewData() {
+        clearTimeout(getNewDataTimer);
+        getNewDataTimer = setTimeout(function () {
+
+        var year = document.getElementById("YEAR").value;
+        var month = document.getElementById("MONTH").value;
+        var fmmmccode = document.getElementById("FMMCCODE").value;
+
+
+        var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month,
+            FMMCCODE: fmmmccode
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("DAILY_ACT_TYPE_OTHER")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+        }, 300);
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var fmmmccode = document.getElementById("FMMCCODE").value;
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+
+        var THICK = new Array();
+        var TYPE = new Array();
+        var THICK_TYPE = new Array();
+        var CR_ACT = new Array();
+        var BMIX_ACT = new Array();
+        var SPEED_PLAN = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var target = split[1];
+                    var thick = split[2];
+                    var type = split[3];
+
+                    var thick_type = thick + '_' + type;
+                    if (THICK_TYPE.indexOf(thick_type) === -1) {
+                        THICK_TYPE.push(thick_type);
+                    }
+
+                    if (target == "C") {
+                        CR_ACT.push(oInputs[i].value);
+                    }
+
+                    if (target == "B") {
+                        BMIX_ACT.push(oInputs[i].value);
+                    }
+
+                    if (target == "S") {
+                        SPEED_PLAN.push(oInputs[i].value);
+                    }
+
+                }
+            }
+        }
+
+        for (i = 0; i < THICK_TYPE.length; i++) {
+            var split = THICK_TYPE[i].split('_');
+            var _thick = split[0];
+            var _type = split[1];
+
+            THICK.push(_thick);
+            TYPE.push(_type);
+        }
+        var error = 'N';
+        var LMI_STOCK_CONTROL_LIST_BUDGET = new Array();
+
+        for (i = 0; i < THICK_TYPE.length; i++) {
+            var json = {
+                "THICK": THICK[i],
+                "TYPE": TYPE[i],
+                "CR_ACT": CR_ACT[i],
+                "BMIX_ACT": BMIX_ACT[i],
+                "SPEED_PLAN": SPEED_PLAN[i]
+            }
+
+            LMI_STOCK_CONTROL_LIST_BUDGET.push(json);
+        }
+
+        var modl = {
+            "YEAR": YEAR,
+            "MONTH": MONTH,
+            "FMMCCODE": fmmmccode,
+            "LIST_LMI_DAILY_ACT_TYPE_OTHER": LMI_STOCK_CONTROL_LIST_BUDGET
+        }
+        console.log(modl);
+        $.ajax({
+		        url: "@Url.Action("DAILY_ACT_TYPE_OTHER_MAINT")",
+		        type: "POST",
+                data: JSON.stringify(modl),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>
+

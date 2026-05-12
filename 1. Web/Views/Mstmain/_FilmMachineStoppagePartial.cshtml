@@ -1,0 +1,21 @@
+﻿@using MstMainModel
+@model MM_OPR_RATIO_STOPPAGE
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date"></th>
+            <th class="target-input">Stoppage Time (Minutes)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_OPR_RATIO_STOPPAGE)
+        {
+            <tr>
+                <td class="target-date">@item.ITEM</td>
+                <td class="target-input"><input type="text" class="onlyNumber" value="@item.STOPPAGE_MINUTE.ToString("G9")" id="txtBudget_@item.ITEM" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

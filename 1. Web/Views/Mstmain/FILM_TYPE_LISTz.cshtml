@@ -1,0 +1,229 @@
+﻿@using MstMainModel
+@model MM_TYPE
+
+@{
+    ViewBag.Title = "FILM TYPE LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 50% !important;
+        min-width: 50%;
+    }
+
+    .mediumDDL {
+        width: 80% !important;
+        min-width: 80%;
+    }
+
+    .table {
+        width: 30% !important;
+    }
+
+    .target-date {
+        width: 90% !important;
+        min-width: 90%;
+    }
+
+    .target-input {
+        width: 10% !important;
+        min-width: 10%;
+    }
+
+    /*.table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }*/
+
+    td {
+        border: 1px solid #000 !important;
+    }
+
+    th {
+        padding: 2px;
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        /*table td button {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 90%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+        }*/
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.1rem 0.3rem;
+        }
+</style>
+<h2>FILM TYPE LIST SETTING</h2>
+<hr />
+<div class="container-fluid">
+    <div class="form-horizontal">
+        @Html.Hidden("REC_TYPE", "1")
+        <div class="form-group">
+            <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">PERIOD :</label>
+            <div class="col-md-2">
+                @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">SEQ :</label>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.SEQ, new { htmlAttributes = new { @class = "form-control mediumDDL onlyNumber" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">THICK :</label>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.THICK, new { htmlAttributes = new { @class = "form-control mediumDDL" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">TYPE :</label>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.TYPE, new { htmlAttributes = new { @class = "form-control mediumDDL" } })
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-primary" onclick="addRow('dataTable')">Add</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table id="dataTable" style="width:300px">
+            <thead>
+                <tr>
+                    <th>
+                        Plan
+                    </th>
+                    <th>
+                        THICK
+                    </th>
+                    <th>
+                        TYPE
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.LIST_LMI_TYPE.Count; i++)
+                {
+                <tr>
+                    <td>
+                        <input type="text" name="input_plan" value="@Model.LIST_LMI_TYPE[i].PLAN" />
+                    </td>
+                    <td>
+                        @Model.LIST_LMI_TYPE[i].THICK
+                        <input type="hidden" name="input_thic" value="@Model.LIST_LMI_TYPE[i].THICK" />
+                    </td>
+                    <td>
+                        @Model.LIST_LMI_TYPE[i].TYPE
+                        <input type="hidden" name="input_type" value="@Model.LIST_LMI_TYPE[i].TYPE" />
+                    </td>
+                    <td>
+                        <button onclick="deleteRow(this)">Delete</button>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+
+        <div class="row">
+            <br />
+            <div class="col-md-3 col-md-offset-3">
+                <button onclick="submitForm('add');">Save</button>
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>
+<script>
+    function deleteRow(r) {
+        var i = r.parentNode.parentNode.rowIndex;
+        document.getElementById("dataTable").deleteRow(i);
+    }
+
+    function addRow(tableID) {
+
+        // input value
+        var plan = document.getElementById('PLAN').value;
+        var thick = document.getElementById('THICK').value;
+        var type = document.getElementById('TYPE').value;
+
+        if (!plan || !thick || !type) {
+            alert("Error! Please check your inputs")
+        } else {
+            var table = document.getElementById(tableID).getElementsByTagName('tbody')[0];
+
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+            var cell1 = row.insertCell(0);
+            var element1 = document.createElement("input");
+            element1.type = "checkbox";
+            element1.name = "chkbox[]";
+            cell1.appendChild(element1);
+            var elementio = document.createElement("input");
+            elementio.type = "hidden";
+            elementio.name = "input_id";
+            elementio.setAttribute("value", "0");
+            cell1.appendChild(elementio);
+
+            var cell2 = row.insertCell(1);
+            var element3 = document.createElement("input");
+            element3.type = "text";
+            element3.name = "input_grpname";
+            element3.setAttribute("value", group_name);
+            //element3.value = group_name;
+            cell2.appendChild(element3);
+
+            var cell3 = row.insertCell(2);
+            var element2 = document.createElement("input");
+            element2.type = "text";
+            element2.name = "input_seq";
+            element2.setAttribute("value", seq);
+            //element2.value = seq;
+            cell3.appendChild(element2);
+
+            var cell4 = row.insertCell(3);
+            cell4.innerHTML = category;
+            var elementio2 = document.createElement("input");
+            elementio2.type = "hidden";
+            elementio2.name = "input_defectid";
+            elementio2.setAttribute("value", category);
+            //elementio2.value = category;
+            cell4.appendChild(elementio2);
+        }
+
+    }
+</script>

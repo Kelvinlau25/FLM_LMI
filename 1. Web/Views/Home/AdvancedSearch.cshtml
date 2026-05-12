@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+<body>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" style="float:left;" id="exampleModalLabel">Advanced Search</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body" id="searchSourceBody">
+
+            @if (ViewData["SearchSource"] != null)
+            {
+                foreach (var search in (ViewData["SearchSource"] as string[]))
+                {
+                    string[] c = search.Split(new Char[] { '/' });
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>@c[0].ToString()</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-9">
+                                <input class="form-control" id="@c[1].ToString()" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                }
+            }
+        </div>
+        <div class="modal-footer">
+            <button type="button" style="float:right" class="btn btn-secondary" onclick="action_clicked();" data-dismiss="modal">Search</button>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function action_clicked() {
+        var searchValue = "";
+        $('#searchSourceBody input[type="text"]').each(function () {
+            if (this.value != "") {
+                var tmp_string = "/";
+                tmp_string += this.value;
+                searchValue += this.id + " LIKE '%" + tmp_string + "%' ";
+
+            }
+        });
+
+        window.location.href = "@Url.Action(ViewData["Action"].ToString(), ViewData["Controller"].ToString())?searchValue=" +searchValue ;
+    }
+
+
+</script>
+

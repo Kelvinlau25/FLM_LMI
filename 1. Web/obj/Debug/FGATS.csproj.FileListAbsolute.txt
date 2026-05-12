@@ -1,0 +1,203 @@
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\ACL_System.dll.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\ACL_System.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\ACL_System.pdb
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\csc.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\csc.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\csc.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\csi.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\csi.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.AppContext.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\vbc.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\vbc.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\vbc.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\obj\Debug\FGATS.csprojAssemblyReference.cache
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\obj\Debug\ACL_System.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\cc\FGATS\obj\Debug\ACL_System.pdb
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\FGATS.dll.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\FGATS.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\FGATS.pdb
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\csc.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\csc.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\csc.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\csi.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\csi.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.AppContext.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\vbc.rsp
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\obj\Debug\FGATS.dll
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\obj\Debug\FGATS.pdb
+C:\Users\Mint_Teoh\Desktop\mint\sys\FGATS\FGATS\FGATS\obj\Debug\FGATS.csprojAssemblyReference.cache
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\FGATS.dll.config
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\FGATS.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\FGATS.pdb
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\csc.exe
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\csc.exe.config
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\csc.rsp
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\csi.exe
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\csi.rsp
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.AppContext.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\vbc.exe
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\vbc.exe.config
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\vbc.rsp
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\obj\Debug\FGATS.dll
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\obj\Debug\FGATS.pdb
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\FGATS.dll.config
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\FGATS.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\FGATS.pdb
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\csc.exe
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\csc.exe.config
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\csc.rsp
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\csi.exe
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\csi.rsp
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.AppContext.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\vbc.exe
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\vbc.exe.config
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\vbc.rsp
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\obj\Debug\FGATS.csprojAssemblyReference.cache
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\obj\Debug\FGATS.dll
+C:\Users\low_ken_ge\Downloads\FGATS\FGATS\obj\Debug\FGATS.pdb
+D:\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+D:\FGATS\FGATS\FGATS\obj\Debug\FGATS.dll
+D:\FGATS\FGATS\FGATS\obj\Debug\FGATS.pdb
+D:\FGATS\FGATS\FGATS\bin\FGATS.dll.config
+D:\FGATS\FGATS\FGATS\bin\FGATS.dll
+D:\FGATS\FGATS\FGATS\bin\FGATS.pdb
+D:\FGATS\FGATS\FGATS\bin\roslyn\csc.exe
+D:\FGATS\FGATS\FGATS\bin\roslyn\csc.exe.config
+D:\FGATS\FGATS\FGATS\bin\roslyn\csc.rsp
+D:\FGATS\FGATS\FGATS\bin\roslyn\csi.exe
+D:\FGATS\FGATS\FGATS\bin\roslyn\csi.rsp
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.AppContext.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.Collections.Immutable.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+D:\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe
+D:\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe.config
+D:\FGATS\FGATS\FGATS\bin\roslyn\vbc.rsp
+D:\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe
+D:\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe.config
+D:\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+C:\Users\Cheah_Chun_Leong\Desktop\FGATS\FGATS\obj\Debug\FGATS.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\FGATS.dll.config
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\FGATS.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\FGATS.pdb
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\csc.exe
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\csc.exe.config
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\csc.rsp
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\csi.exe
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\csi.rsp
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.AppContext.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.Collections.Immutable.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\System.Reflection.Metadata.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\vbc.exe.config
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\vbc.rsp
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\bin\roslyn\VBCSCompiler.exe.config
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\obj\Debug\FGATS.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CoreCompileInputs.cache
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\obj\Debug\FGATS.csproj.CopyComplete
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\obj\Debug\FGATS.dll
+D:\KSFoong\Source Code\MVC Template\1\FGATS\FGATS\FGATS\obj\Debug\FGATS.pdb

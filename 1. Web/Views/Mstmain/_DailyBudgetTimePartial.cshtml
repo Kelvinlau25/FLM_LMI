@@ -1,0 +1,41 @@
+﻿@using MstMainModel
+@model MM_DAILY_BUDGET_TIME
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date">Date</th>
+            <th class="target-input">Prod Days</th>
+            <th class="target-input">Utility Days</th>
+            <th class="target-input">Test Days</th>
+            <th class="target-input">Type Change</th>
+            <th class="target-input">Filter Change</th>
+            <th class="target-input">Film Break</th>
+            <th class="target-input">MC Trouble</th>
+            <th class="target-input">Cleaning</th>
+            <th class="target-input">Others</th>
+            <th class="target-input">SD</th>
+            <th class="target-input">Wait</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_LMI_DAILY_BUDGET_TIME)
+        {
+            <tr>
+                <td class="target-date">@item.SDATE.ToString("yyyy-MM-dd")</td>
+                <td class="target-input"><input class="onlyNumber" value="@item.PROD_DAYS" id="txtTarget_prodDay_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.UTILITY_DAYS" id="txtTarget_utilityDay_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TEST_DAYS" id="txtTarget_testDay_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TYPE_CHANGE" id="txtTarget_typeChange_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.FITLER_CHANGE" id="txtTarget_filterChange_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.FILM_BREAK" id="txtTarget_filmBreak_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.MC_TROUBLE" id="txtTarget_mcTrouble_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.CLEANING" id="txtTarget_cleaning_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.OTHERS" id="txtTarget_others_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.SD" id="txtTarget_sd_@item.SDATE.ToString("yyyyMMdd")" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.WAIT" id="txtTarget_wait_@item.SDATE.ToString("yyyyMMdd")" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

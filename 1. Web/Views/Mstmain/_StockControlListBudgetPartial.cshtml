@@ -1,0 +1,23 @@
+﻿@using MstMainModel
+@model MM_STOCK_CONTROL_LIST_BUDGET
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date"></th>
+            <th class="target-input">Target</th>
+            <th class="target-input">Budget</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_LMI_STOCK_CONTROL_LIST_BUDGET)
+        {
+            <tr>
+                <td class="target-date">@item.PROD_LINE</td>
+                <td class="target-input"><input class="onlyNumber" value="@item.TARGET" id="txtTarget_T_@item.PROD_LINE" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.BUDGET" id="txtTarget_B_@item.PROD_LINE" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

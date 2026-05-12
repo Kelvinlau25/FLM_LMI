@@ -1,0 +1,255 @@
+﻿@using MstMainModel
+@model MM_PRODUCTIVITY_TARGET
+
+@{
+    ViewBag.Title = "FILM LMI PRODUCTIVITY TARGET SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 20%;
+    }
+
+    .table {
+        width: 50% !important;
+    }
+
+    .target-date {
+        width: 20% !important;
+        min-width: 20%;
+    }
+
+    .target-input {
+        width: 26.67% !important;
+        min-width: 26.67%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>PRODUCTIVITY TARGET</h2>
+<hr />
+@*@using (Html.BeginForm("FILM_LMI_PRODUCTIVITY_TARGET", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div>
+                        @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("FILM_LMI_PRODUCTIVITY_TARGET", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+        @*<div class="col-md-3">
+            <button type="submit" class="btn btn-primary">View</button>
+        </div>*@
+    </div>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            @*@grid.GetHtml(
+                   tableStyle: "table",
+                   headerStyle: "head",
+                   numericLinksCount:5,
+                   mode: WebGridPagerModes.All,
+                   firstText:"First",
+                   previousText: "Previous",
+                   nextText: "Next",
+                   lastText:"Last",
+                   alternatingRowStyle: "alt",
+                   columns: grid.Columns(
+                       grid.Column("Date", style: "target-date", format: @<text>@item.SDATE.ToString("yyyy-MM-dd")</text>),
+                           grid.Column("Target F1", style: "target-input", format: @<text> <input class="onlyDouble" value="@item.TARGET1" id="txtTarget_F1_@item.SDATE.ToString("yyyyMMdd")" /> </text>),
+                         grid.Column("Target F2", style: "target-input", format: @<text> <input class="onlyDouble" value="@item.TARGET2" id="txtTarget_F2_@item.SDATE.ToString("yyyyMMdd")" /> </text>),
+                         grid.Column("Target F3", style: "target-input", format: @<text> <input class="onlyDouble" value="@item.TARGET3" id="txtTarget_F3_@item.SDATE.ToString("yyyyMMdd")" /> </text>)
+                    )
+                )*@
+            @{
+                Html.RenderPartial("_FilmLmiProductivityTargetPartial");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<script>
+    var getNewDataTimer = null;
+
+    function getNewData() {
+        clearTimeout(getNewDataTimer);
+        getNewDataTimer = setTimeout(function () {
+            var year = document.getElementById("YEAR").value;
+            var month = document.getElementById("MONTH").value;
+
+            var mib = {
+                YEAR: year,
+                MONTH: month
+            };
+
+            console.log(mib)
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("FILM_LMI_PRODUCTIVITY_TARGET")',
+                data: JSON.stringify(mib),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    console.log(data)
+                    $('#grid').html(data)
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr)
+                    console.log(ajaxOptions)
+                    console.log(thrownError)
+                }
+            });
+        }, 300);
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+
+        var SDATE = new Array();
+        var TARGET1 = new Array();
+        var TARGET2 = new Array();
+        var TARGET3 = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var target = split[1];
+                    var strDate = split[2];
+
+                    // date
+                    var year = strDate.substring(0, 4);
+                    var month = strDate.substring(4, 6);
+                    var day = strDate.substring(6, 8);
+
+                    var date = new Date(year, month-1, day);
+
+                    if (SDATE.indexOf(date.toISOString()) === -1) {
+                        SDATE.push(date.toISOString());
+                    }
+
+                    if (target == "F1") {
+                        TARGET1.push(oInputs[i].value);
+                    }
+
+                    if (target == "F2") {
+                        TARGET2.push(oInputs[i].value);
+                    }
+
+                    if (target == "F3") {
+                        TARGET3.push(oInputs[i].value);
+                    }
+
+                }
+            }
+        }
+        var error = 'N';
+        var LMI_PRODUCTIVITY_TARGET = new Array();
+
+        for (i = 0; i < SDATE.length; i++) {
+            var json = {
+                "SDATE": SDATE[i],
+                "TARGET1": TARGET1[i],
+                "TARGET2": TARGET2[i],
+                "TARGET3": TARGET3[i]
+            }
+
+            LMI_PRODUCTIVITY_TARGET.push(json);
+        }
+
+        console.log(LMI_PRODUCTIVITY_TARGET);
+
+        $.ajax({
+		        url: "@Url.Action("FILM_LMI_PRODUCTIVITY_TARGET_MAINT")",
+		        type: "POST",
+                data: JSON.stringify(LMI_PRODUCTIVITY_TARGET),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>

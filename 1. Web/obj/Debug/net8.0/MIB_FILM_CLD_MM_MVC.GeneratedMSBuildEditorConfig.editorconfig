@@ -1,0 +1,201 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MIB_FILM_CLD_MM_MVC
+build_property.RootNamespace = MIB_FILM_CLD_MM_MVC
+build_property.ProjectDir = C:\NET8 PROJECT\FLM_LMI\1. Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\NET8 PROJECT\FLM_LMI\1. Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/AdvancedSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZHZhbmNlZFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Home/SideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWRlQmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/DAILY_ACT_TYPE_OTHER.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxEQUlMWV9BQ1RfVFlQRV9PVEhFUi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/DAILY_BUDGET_TIME.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxEQUlMWV9CVURHRVRfVElNRS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/DAILY_PLAN_BUDGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxEQUlMWV9QTEFOX0JVREdFVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/DAILY_PLAN_TYPE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxEQUlMWV9QTEFOX1RZUEUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_LMI_PRODUCTIVITY_TARGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX0xNSV9QUk9EVUNUSVZJVFlfVEFSR0VULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_MACHINE_STOPPAGE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX01BQ0hJTkVfU1RPUFBBR0UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_PRODUCTION_HOLIDAYS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1BST0RVQ1RJT05fSE9MSURBWVMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_PROD_LIST.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1BST0RfTElTVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_RAW_BALANCE.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1JBV19CQUxBTkNFLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_TARGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1RBUkdFVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_TYPE_LIST.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1RZUEVfTElTVC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FILM_TYPE_LISTz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGSUxNX1RZUEVfTElTVHouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FMMCCODE_BUDGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGTU1DQ09ERV9CVURHRVQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/FMMCCODE_OTHER.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxGTU1DQ09ERV9PVEhFUi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/OPR_RATIO_TARGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxPUFJfUkFUSU9fVEFSR0VULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/SALES_ORDER_SITUATION_GROUP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxTQUxFU19PUkRFUl9TSVRVQVRJT05fR1JPVVAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/STOCK_CONTROL_LIST_BUDGET.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxTVE9DS19DT05UUk9MX0xJU1RfQlVER0VULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_DailyActTypeOtherPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRGFpbHlBY3RUeXBlT3RoZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_DailyBudgetTimePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRGFpbHlCdWRnZXRUaW1lUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_DailyPlanBudgetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRGFpbHlQbGFuQnVkZ2V0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_DailyPlanTypePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRGFpbHlQbGFuVHlwZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmLmiProductivityTargetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbUxtaVByb2R1Y3Rpdml0eVRhcmdldFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmMachineStoppagePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbU1hY2hpbmVTdG9wcGFnZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmProductionHolidaysPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbVByb2R1Y3Rpb25Ib2xpZGF5c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmRawBalancePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbVJhd0JhbGFuY2VQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmTargetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbVRhcmdldFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FilmTypeListPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRmlsbVR5cGVMaXN0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FmmccodeBudgetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRm1tY2NvZGVCdWRnZXRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_FmmccodeOtherPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfRm1tY2NvZGVPdGhlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_OprRatioTargetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfT3ByUmF0aW9UYXJnZXRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_SalesOrderSituationGroupPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfU2FsZXNPcmRlclNpdHVhdGlvbkdyb3VwUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Mstmain/_StockControlListBudgetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXN0bWFpblxfU3RvY2tDb250cm9sTGlzdEJ1ZGdldFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Shared/_Layout_Empty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfRW1wdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/Shared/_Layout_iFrame.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfaUZyYW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NET8 PROJECT/FLM_LMI/1. Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

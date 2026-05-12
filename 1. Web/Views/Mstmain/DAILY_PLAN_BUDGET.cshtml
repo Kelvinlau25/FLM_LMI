@@ -1,0 +1,246 @@
+﻿@using MstMainModel
+@model MM_DAILY_PLAN_BUDGET
+
+@{
+    ViewBag.Title = "FILM DAILY PLAN BUDGET LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 35%;
+    }
+
+    .table {
+        width: 25% !important;
+    }
+
+    .target-date {
+        width: 23.33% !important;
+        min-width: 23.33%;
+    }
+
+    .target-input {
+        width: 25% !important;
+        min-width: 25%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.1rem 0.3rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>FILM DAILY PLAN BUDGET LIST SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("DAILY_PLAN_BUDGET", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div>
+                        @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                    </div>
+                    <div class="row">
+                        @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("DAILY_PLAN_BUDGET", "Mstmain", FormMethod.Post, new { @class = "form-horizontal", onsubmit = "return false;" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">PERIOD :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="FMMCCODE" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">FM :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    @*<div class="form-group">
+            <div class="col-md-offset-1 col-md-3">
+                <button type="submit" class="btn btn-primary">View</button>
+            </div>
+        </div>*@
+}
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+
+            @{
+                Html.RenderPartial("_DailyPlanBudgetPartial");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<script>
+var getNewDataTimer = null;
+
+function getNewData() {
+    clearTimeout(getNewDataTimer);
+    getNewDataTimer = setTimeout(function () {
+    var year = document.getElementById("YEAR").value;
+    var month = document.getElementById("MONTH").value;
+    var fmmmccode = document.getElementById("FMMCCODE").value;
+
+
+    var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month,
+            FMMCCODE: fmmmccode
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("DAILY_PLAN_BUDGET")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+        }, 300);
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+
+        var THICK_TYPE = new Array();
+        var THICK = new Array();
+        var TYPE = new Array();
+        var PLAN = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var thick = split[1];
+                    var type = split[2];
+
+                    if (THICK_TYPE.indexOf(thick+'_'+type) === -1) {
+                        THICK_TYPE.push(thick + '_' + type);
+                    }
+
+                    PLAN.push(oInputs[i].value);
+                }
+            }
+        }
+        var error = 'N';
+        var LMI_DAILY_PLAN_BUDGET = new Array();
+
+        for (var i = 0; i < THICK_TYPE.length; i++) {
+            var split = THICK_TYPE[i].split('_');
+            var thick = split[0];
+            var type = split[1];
+            THICK.push(thick);
+            TYPE.push(type);
+        }
+
+        for (i = 0; i < THICK_TYPE.length; i++) {
+            var json = {
+                "THICK": THICK[i],
+                "TYPE": TYPE[i],
+                "PLAN": PLAN[i]
+            }
+
+            LMI_DAILY_PLAN_BUDGET.push(json);
+        }
+
+        var fmmCode = document.getElementById("FMMCCODE").value;
+
+        var modelz = {
+            "YEAR": YEAR,
+            "MONTH": MONTH,
+            "FMMCCODE": fmmCode,
+            "LIST_LMI_DAILY_PLAN_BUDGET": LMI_DAILY_PLAN_BUDGET
+        }
+
+        $.ajax({
+		        url: "@Url.Action("DAILY_PLAN_BUDGET_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(modelz),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+                    alert('Record save successfully.');
+		        }
+        });
+    }
+</script>

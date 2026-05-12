@@ -1,0 +1,174 @@
+﻿@using MstMainModel
+@model MM_PROD
+@{
+    ViewBag.Title = "FILM PROD LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 42.5% !important;
+        min-width: 42.5%;
+    }
+
+    .table {
+        width: 20% !important;
+    }
+
+    .target-date {
+        width: 50% !important;
+        min-width: 50%;
+    }
+
+    .target-input {
+        width: 15% !important;
+        min-width: 15%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td button {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.1rem 0.3rem;
+            /*border: 1px solid #ddd;*/
+        }
+</style>
+<h2>FILM PROD LIST SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("FILM_PROD_LIST_MAINT", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    @Html.Hidden("REC_TYPE", "1")
+                    <div>
+                        @(Html.EditorFor(model => model.PROD, new { htmlAttributes = new { @class = "form-control" } }))
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("FILM_PROD_LIST_MAINT", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Hidden("REC_TYPE", "1")
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">PROD :</label>
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.PROD, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+}
+<div class="container-fluid">
+    <div class="row" style="margin:auto;padding-bottom:0.5em;">
+        <button onClick="window.location.reload();" class="btn btn-primary">Refresh</button>
+    </div>
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            <table class="table">
+                <thead>
+                    <tr class="head">
+                        <th class="target-date">PROD</th>
+                        <th class="target-date"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LIST_LMI_PROD)
+                    {
+                        <tr>
+                            <td class="target-date">@item.PROD</td>
+                            <td class="target-date"><input type="submit" onclick="remove('@item.PROD','5')" form="deleteForm" value="Delete"></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+
+@using (Html.BeginForm("FILM_PROD_LIST_MAINT", "Mstmain", FormMethod.Post, new { @class = "form-horizontal", id = "deleteForm" }))
+{
+    <input type="hidden" name="PROD" />
+    <input type="hidden" name="REC_TYPE" />
+}
+
+@if (ViewBag.Message != null)
+{
+    <script>
+        if ('OK' == '@ViewBag.Message') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    </script>
+}
+
+<script>
+    function remove(prod, rectype) {
+
+        var json = {
+            "PROD": prod,
+            "REC_TYPE": rectype
+        }
+
+        $("input[name='PROD']").val(prod);
+
+        $("input[name='REC_TYPE']").val('5');
+
+        $.ajax({
+		        url: "@Url.Action("FILM_PROD_LIST_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(json),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            //alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+              //      error = 'Y';
+
+		            //var newWindow = window.open();
+              //      newWindow.document.write(data.responseText);
+              //      return;
+		            },
+                success: function (data) {
+                    //if (data.RESULT != "OK") {
+                    //    console.log(data);
+                    //    alert("Record failed to save.");
+                    //    return;
+                    //}
+		        }
+        });
+    }
+</script>

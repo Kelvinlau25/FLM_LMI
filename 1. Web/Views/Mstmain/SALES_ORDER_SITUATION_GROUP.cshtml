@@ -1,0 +1,240 @@
+﻿@using MstMainModel
+@model MM_SALES_ORDER_GROUP
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+@{
+    ViewBag.Title = "FILM SALES ORDER SITUATION GROUP CREATION";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 42.5% !important;
+        min-width: 42.5%;
+    }
+
+    .table {
+        width: 60% !important;
+    }
+
+    .target-date {
+        width: 8.33% !important;
+        min-width: 8.33%;
+    }
+
+    .target-input {
+        width: 8.33% !important;
+        min-width: 8.33% !important;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 90%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>FILM SALES ORDER SITUATION GROUP CREATION</h2>
+<hr />
+@*@using (Ajax.BeginForm("SALES_ORDER_SITUATION_GROUP_MAINT", "Mstmain",null, new AjaxOptions { HttpMethod = "Post", OnSuccess = "ajaxSuccess" },null))
+    {
+        <div>
+            <div class="row">
+                @Html.Hidden("action","1")
+                <input type="hidden" name="action" id="action" value="1" />
+                <div class="form-group row">
+                    <label for="PROD_LINE" class="col-md-2 col-form-label">Prod Line</label>
+                    <div class="col-md-2">
+                        @(Html.DropDownListFor(model => model.PROD_LINE, new SelectList(ViewBag.ProdLineDDL), new { @class = "form-control smallDDL" }))
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="GROUP_NAME" class="col-md-2 col-form-label">Group Name</label>
+                    <div class="col-md-5">
+                        @Html.EditorFor(model => model.GROUP_NAME, new { htmlAttributes = new { @class = "form-control smallDDL" } })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="RPT_GROUP" class="col-md-2 col-form-label">Report Group</label>
+                    <div class="col-md-5">
+                        @(Html.DropDownListFor(model => model.RPT_GROUP, new SelectList(ViewBag.ReportGroupDDL), new { @class = "form-control smallDDL" }))
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary " value="Submit" />
+            </div>
+        </div>
+    }*@
+
+<div class="form-horizontal">
+    <input type="hidden" name="action" id="action" value="1" />
+    <div class="form-group row">
+        <label for="PROD_LINE" class="col-md-2 col-form-label">Prod Line</label>
+        <div class="col-md-2">
+            @(Html.DropDownListFor(model => model.PROD_LINE, new SelectList(ViewBag.ProdLineDDL), new { @class = "form-control smallDDL" }))
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="GROUP_NAME" class="col-md-2 col-form-label">Group Name</label>
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.GROUP_NAME, new { htmlAttributes = new { @class = "form-control smallDDL" } })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="RPT_GROUP" class="col-md-2 col-form-label">Report Group</label>
+        <div class="col-md-5">
+            @(Html.DropDownListFor(model => model.RPT_GROUP, new SelectList(ViewBag.ReportGroupDDL), new { @class = "form-control smallDDL" }))
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary " value="Submit"  onclick="submitForm()"/>
+</div>
+<div id="grid">
+    @{
+        Html.RenderPartial("_SalesOrderSituationGroupPartial");
+    }
+</div>
+<script>
+    function submitForm() {
+
+        var prodLine = document.getElementById("PROD_LINE").value;
+        var grpName = document.getElementById("GROUP_NAME").value;
+        var rptGrp = document.getElementById("RPT_GROUP").value;
+
+        var lmi = {
+            ID_LMI_SALES_GROUP: "0",
+            ACTION: "1",
+            PROD_LINE: prodLine,
+            GROUP_NAME: grpName,
+            RPT_GROUP: rptGrp
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SALES_ORDER_SITUATION_GROUP_MAINT")',
+            data: '{"model": ' + JSON.stringify(lmi) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                //$('#grid').html(data)
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+                ////location.reload();
+                //console.log("test")
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+                //alert('Error!'+' '+ex);
+            }
+        });
+    }
+</script>
+<script>
+    function remove(data) {
+
+        var lmi = {
+            ID_LMI_SALES_GROUP: data,
+            ACTION: "5",
+            PROD_LINE: " ",
+            GROUP_NAME: " ",
+            RPT_GROUP: " "
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SALES_ORDER_SITUATION_GROUP_MAINT")',
+            data: '{"model": ' + JSON.stringify(lmi) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                //$('#grid').html(data)
+                console.log(data)
+                alert("Record successfully saved!")
+                $('#grid').html(data)
+                ////location.reload();
+                //console.log("test")
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+                //alert('Error!'+' '+ex);
+            }
+        });
+    }
+</script>
+@*<script>
+    function remove(data) {
+        console.log(data);
+
+        var model = {
+            "ID_LMI_SALES_GROUP": data,
+            "PROD_LINE": "",
+            "GROUP_NAME": "",
+            "RPT_GROUP": ""
+        }
+
+        var data_model = {
+            "action": "5",
+            "model": model
+        }
+
+        var lmi = {
+            ACTION: "5",
+            ID_LMI_SALES_GROUP: data,
+            PROD_LINE: " ",
+            GROUP_NAME: " ",
+            RPT_GROUP: " "
+        };
+
+        var error = 'N';
+
+        $.ajax({
+		url: "@Url.Action("SALES_ORDER_SITUATION_GROUP_MAINT")",
+		type: "POST",
+            data: JSON.stringify(lmi),
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+		error: function (data) {
+		    alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+            error = 'Y';
+
+		    var newWindow = window.open();
+            newWindow.document.write(data.responseText);
+            return;
+		    },
+        success: function (data) {
+            console.log(data)
+            alert("Record successfully saved!")
+            $('#grid').html(data)
+		}
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>*@

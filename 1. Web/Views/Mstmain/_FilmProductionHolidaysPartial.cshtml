@@ -1,0 +1,44 @@
+﻿@using MstMainModel
+@model MM_FILM_PRODUCTION_HOLIDAYS
+<script src="~/Scripts/Main.js"></script>
+
+@if (Model.LIST_FILM_PRODUCTION_HOLIDAYS.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr class="head">
+                <th class="target-input">ACTION</th>
+                <th class="target-date">HOLIDAY DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.LIST_FILM_PRODUCTION_HOLIDAYS)
+            {
+                <tr>
+                    <td class="target-input"><button onclick="remove('@item.HOLIDAY_DATE.ToString("yyyy-MM-dd")','5')">Delete</button></td>
+                    <td class="target-date">@item.HOLIDAY_DATE.ToString("yyyy/MM/dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="target-input">
+                    Action
+                </th>
+                <th class="target-date">
+                    HOLIDAY DATE
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" align="center" style="color:red;">No data</td>
+            </tr>
+        </tbody>
+    </table>
+}

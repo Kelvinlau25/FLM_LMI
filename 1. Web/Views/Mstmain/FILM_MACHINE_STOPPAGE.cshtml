@@ -1,0 +1,255 @@
+﻿@using MstMainModel
+@model MM_OPR_RATIO_STOPPAGE
+
+@{
+    ViewBag.Title = "FILM MIB MACHINE STOPPAGE SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+
+<style>
+    .smallDDL {
+        width: 30% !important;
+        min-width: 20%;
+    }
+
+    .table {
+        width: 25% !important;
+    }
+
+    .target-date {
+        width: 30% !important;
+        min-width: 30%;
+    }
+
+    .target-input {
+        width: 70% !important;
+        min-width: 70%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 0px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+</style>
+
+<h2>
+    FILM MIB MACHINE STOPPAGE SETTING
+</h2>
+<hr />
+@*@using (Html.BeginForm("FILM_MACHINE_STOPPAGE", "MstMain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div>
+                        @Html.EditorFor(model => model.PERIOD, new { htmlAttributes = new { @class = "form-control form-control-sm", @type = "date" } })
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+
+@using (Html.BeginForm("FILM_MACHINE_STOPPAGE", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.PERIOD, new { htmlAttributes = new { @class = "form-control form-control-sm", @type = "date", @onchange = "getNewData()" } })
+        </div>
+        @*<div class="col-md-3">
+                <button type="submit" class="btn btn-primary">View</button>
+            </div>*@
+    </div>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            @*@grid.GetHtml(
+                tableStyle: "table",
+                headerStyle: "head",
+                numericLinksCount:5,
+                mode: WebGridPagerModes.All,
+                firstText:"First",
+                previousText: "Previous",
+                nextText: "Next",
+                lastText:"Last",
+                alternatingRowStyle: "alt",
+                columns: grid.Columns(
+                grid.Column("", style: "target-date", format: @<text>@item.ITEM</text>),
+                grid.Column("Stoppage Time (Minutes)", style: "target-input", format: @<text> <input type="text" class="onlyNumber" value="@item.STOPPAGE_MINUTE.ToString("G9")" id="txtBudget_@item.ITEM" /> </text>))
+                                                                             )*@
+            @{
+                Html.RenderPartial("_FilmMachineStoppagePartial");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+</div>
+
+@{
+    if (ViewBag.Result != "" && ViewBag.Result != null)
+    {
+        <script type="text/javascript" language="javascript">
+            alert('@ViewBag.Result');
+        </script>
+    }
+}
+<script>
+    function getNewData() {
+
+        var year = document.getElementById("PERIOD").value;
+
+
+        var mib = {
+            //ACTIONTYPE: "View",
+            PERIOD: year
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("FILM_MACHINE_STOPPAGE")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+    }
+</script>
+<script>
+    function submitForm() {
+
+
+        var SDATE = new Array();
+        var ITEM = new Array();
+        var STOPPAGE_MINUTE = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        var date = document.getElementById('PERIOD').value;
+
+        var PERIOD = date;
+
+        for (i = 0; i < oInputs.length; i++) {
+
+            if (oInputs[i].type == 'text') {
+
+                if (oInputs[i].id.includes('txtBudget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var target = split[1];
+
+                    if (target == "F1") {
+                        ITEM.push("F1")
+                        STOPPAGE_MINUTE.push(oInputs[i].value);
+                    }
+
+                    if (target == "F2") {
+                        ITEM.push("F2")
+                        STOPPAGE_MINUTE.push(oInputs[i].value);
+                    }
+
+                    if (target == "F3") {
+                        ITEM.push("F3")
+                        STOPPAGE_MINUTE.push(oInputs[i].value);
+                    }
+
+                }
+            }
+        }
+
+        var error = 'N';
+        var LIST_OPR_RATIO_STOPPAGE = new Array();
+
+        for (i = 0; i < oInputs.length; i++) {
+            var json = {
+                "ITEM": ITEM[i],
+                "STOPPAGE_MINUTE": STOPPAGE_MINUTE[i]
+            }
+
+            LIST_OPR_RATIO_STOPPAGE.push(json);
+        }
+
+        var model = {
+            "PERIOD": PERIOD,
+            "LIST_OPR_RATIO_STOPPAGE": LIST_OPR_RATIO_STOPPAGE
+        }
+
+        console.log(model)
+
+        $.ajax({
+		        url: "@Url.Action("FILM_MACHINE_STOPPAGE_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(model),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>

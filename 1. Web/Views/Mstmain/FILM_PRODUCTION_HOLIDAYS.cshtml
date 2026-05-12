@@ -1,0 +1,290 @@
+﻿@using MstMainModel
+@model MM_FILM_PRODUCTION_HOLIDAYS
+@{
+    ViewBag.Title = "FILM MIB PRODUCTION HOLIDAYS SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 20%;
+    }
+
+    .table {
+        width: 15% !important;
+    }
+
+    .target-date {
+        width: 70% !important;
+        min-width: 70%;
+    }
+
+    .target-input {
+        width: 30% !important;
+        min-width: 30%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+
+        table td button {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.2rem;
+            margin: 0.1rem 0.1rem;
+            /*border: 1px solid #ddd;*/
+        }
+</style>
+<h2>FILM MIB PRODUCTION HOLIDAYS SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("FILM_PRODUCTION_HOLIDAYS", "MstMain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div>
+                        @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+    @using (Html.BeginForm("FILM_PRODUCTION_HOLIDAYS_MAINT", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="DATETIME">Holiday Day</label>
+                </div>
+                <div class="form-group col-sm-2">
+                    <div>
+                        @Html.Hidden("ACTION", 1)
+                        @Html.EditorFor(model => model.DATETIME, new { htmlAttributes = new { @class = "form-control form-control-sm", @type = "date" } })
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("FILM_PRODUCTION_HOLIDAYS", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+        @*<div class="col-md-3">
+            <button type="submit" class="btn btn-primary">View</button>
+        </div>*@
+    </div>
+}
+
+@*@using (Html.BeginForm("FILM_PRODUCTION_HOLIDAYS_MAINT", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+    {*@
+<div class="form-horizontal">
+    <div class="form-group">
+        <label for="DATETIME" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Holiday Day</label>
+        <div class="col-md-3">
+            @*@Html.Hidden("ACTION", 1)*@
+            <input type="hidden" name="ACTION" id="ACTION" value="1" />
+            @Html.EditorFor(model => model.DATETIME, new { htmlAttributes = new { @class = "form-control form-control-sm", @type = "date" } })
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary" onclick="submitForm()">Add</button>
+        </div>
+    </div>
+</div>
+
+@*}*@
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" class="col-md-offset-1">
+            @{
+                Html.RenderPartial("_FilmProductionHolidaysPartial");
+            }
+        </div>
+    </div>
+</div>
+
+@{
+    if (ViewBag.Result != "" && ViewBag.Result != null)
+    {
+        <script type="text/javascript" language="javascript">
+    alert('@ViewBag.Result');
+        </script>
+    }
+}
+<script>
+    function getNewData() {
+
+        var year = document.getElementById("YEAR").value;
+        var month = document.getElementById("MONTH").value;
+
+
+        var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("FILM_PRODUCTION_HOLIDAYS")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var dateTime = document.getElementById("DATETIME").value;
+        var action = document.getElementById("ACTION").value;
+        var year = document.getElementById("YEAR").value;
+        var month = document.getElementById("MONTH").value;
+        //31-oct-2025
+
+
+        var tpm = {
+            ACTION: action,
+            YEAR: year,
+            MONTH: month,
+            DATETIME: dateTime,
+            LIST_FILM_PRODUCTION_HOLIDAYS: []
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("FILM_PRODUCTION_HOLIDAYS_MAINT")',
+            data: '{"model": ' + JSON.stringify(tpm) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#grid').html(data)
+                console.log(data)
+                alert("Record successfully saved!")
+                $('#grid').html(data)
+                //location.reload();
+                console.log("test")
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.message);
+            }
+        });
+    }
+</script>
+<script>
+    function remove(prod, rectype) {
+        // prod is already a date string from the server (e.g., "2021-01-01")
+        // Send it directly without creating a Date object to avoid timezone issues
+        var json = {
+            "DATETIME": prod,
+            "ACTION": rectype
+        }
+
+        console.log(prod)
+
+        @*$.ajax({
+		        url: "@Url.Action("FILM_PRODUCTION_HOLIDAYS_MAINT")",
+		        type: "POST",
+            data: JSON.stringify(json),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+            error: function (data) {
+                console.log(data)
+                alert("Record successfully saved!")
+                $('#grid').html(data)
+		            },
+            success: function (data) {
+                if (data.RESULT == "OK") {
+                    alert("Data saved successfully.")
+                }
+		        }
+        });*@
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("FILM_PRODUCTION_HOLIDAYS_MAINT")',
+            data: '{"model": ' + JSON.stringify(json) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                //$('#grid').html(data)
+                console.log(data)
+                alert("Record successfully saved!")
+                $('#grid').html(data)
+                ////location.reload();
+                //console.log("test")
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+                //alert('Error!'+' '+ex);
+            }
+        });
+    }
+</script>

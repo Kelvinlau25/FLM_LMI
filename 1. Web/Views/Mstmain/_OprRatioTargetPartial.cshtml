@@ -1,0 +1,21 @@
+﻿@using MstMainModel
+@model MM_OPR_RATIO_TARGET
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table-borderless table col-sm-3">
+    <thead>
+        <tr class="head">
+            <th></th>
+            <th>Target</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_OPR_RATIO_TARGET)
+        {
+            <tr>
+                <td>@item.ITEM</td>
+                <td><input class="form-control TableTextbox onlyNumber" value="@item.TARGET_BUDGET" id="txtBudget_@item.ITEM" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

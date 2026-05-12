@@ -1,0 +1,218 @@
+﻿@using MstMainModel
+@model MM_FMMCCODE_BUDGET
+@{
+    ViewBag.Title = "FILM FMMCCODE A LIST BUDGET SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 35%;
+    }
+
+    .table {
+        width: 30% !important;
+    }
+
+    .target-date {
+        width: 45% !important;
+        min-width: 45%;
+    }
+
+    .target-input {
+        width: 55% !important;
+        min-width: 55%;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 95%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>FILM FMMCCODE A LIST BUDGET SETTING</h2>
+<hr />
+@using (Html.BeginForm("FMMCCODE_BUDGET", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+        @*<div class="col-md-3">
+            <button type="submit" class="btn btn-primary">View</button>
+        </div>*@
+    </div>
+}
+<div class="container-fluid">
+    <div class="row">
+        <div id="grid" style="margin-left:15px;">
+            @*@grid.GetHtml(
+                tableStyle: "table",
+                headerStyle: "head",
+                numericLinksCount:5,
+                mode: WebGridPagerModes.All,
+                firstText:"First",
+                previousText: "Previous",
+                nextText: "Next",
+                lastText:"Last",
+                alternatingRowStyle: "alt",
+                columns: grid.Columns(
+                    grid.Column("PROD", style: "target-date", format: @<text>@item.PROD</text>),
+                       grid.Column("Budget", style: "target-input", format: @<text> <input class="onlyNumber" value="@item.BUDGET1" id="txtTarget_B_@item.PROD" /> </text>)
+               )
+           )*@
+            @{ 
+                Html.RenderPartial("_FmmccodeBudgetPartial");
+
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+        </div>
+    </div>
+    <br />
+    <br />
+</div>
+<script>
+var getNewDataTimer = null;
+
+function getNewData() {
+    clearTimeout(getNewDataTimer);
+    getNewDataTimer = setTimeout(function () {
+    var year = document.getElementById("YEAR").value;
+    var month = document.getElementById("MONTH").value;
+        
+    var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("FMMCCODE_BUDGET")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+        }, 300);
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+
+        var YEAR_MONTH = new Array();
+        var PROD = new Array();
+        var BUDGET1 = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var target = split[1];
+                    var prodLine = split[2];
+
+                    YEAR_MONTH.push(YEAR + '-' + MONTH);
+
+                    if (PROD.indexOf(prodLine) === -1) {
+                        PROD.push(prodLine);
+                    }
+
+                    if (target == "B") {
+                        BUDGET1.push(oInputs[i].value);
+                    }
+
+                }
+            }
+        }
+        var error = 'N';
+        var LMI_STOCK_CONTROL_LIST_BUDGET = new Array();
+
+        for (i = 0; i < YEAR_MONTH.length; i++) {
+            var json = {
+                "YEAR_MONTH": YEAR_MONTH[i],
+                "PROD": PROD[i],
+                "BUDGET1": BUDGET1[i]
+            }
+
+            LMI_STOCK_CONTROL_LIST_BUDGET.push(json);
+        }
+
+        console.log(LMI_STOCK_CONTROL_LIST_BUDGET);
+
+        $.ajax({
+		        url: "@Url.Action("FMMCCODE_BUDGET_MAINT")",
+		        type: "POST",
+                data: JSON.stringify(LMI_STOCK_CONTROL_LIST_BUDGET),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>
+

@@ -1,0 +1,18 @@
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\bin\Debug\DBConnection.dll
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\bin\Debug\DBConnection.pdb
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\obj\Debug\DBConnection.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\obj\Debug\DBConnection.csproj.CoreCompileInputs.cache
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\obj\Debug\DBConnection.dll
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM\DBConnection\obj\Debug\DBConnection.pdb
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\bin\Debug\DBConnection.dll
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\bin\Debug\DBConnection.pdb
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\obj\Debug\DBConnection.csprojAssemblyReference.cache
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\obj\Debug\DBConnection.csproj.CoreCompileInputs.cache
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\obj\Debug\DBConnection.dll
+C:\KCL Program\KS FOONG\KS's GITHUB\11 PFR-LMI-CLD-API\PFR-LMI-CLD-API\DBConnection\obj\Debug\DBConnection.pdb
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\bin\Debug\DBConnection.dll
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\bin\Debug\DBConnection.pdb
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\DBConnection.csproj.AssemblyReference.cache
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\DBConnection.csproj.CoreCompileInputs.cache
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\DBConnection.dll
+C:\CONVERTED PROJECT\FLM_LMI\3. API\DBConnection\obj\Debug\DBConnection.pdb

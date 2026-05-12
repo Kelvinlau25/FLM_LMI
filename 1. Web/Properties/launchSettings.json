@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MIB_FILM_CLD_MM_MVC": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:62800;http://localhost:62801"
+    }
+  }
+}

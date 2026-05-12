@@ -1,0 +1,189 @@
+﻿@using MstMainModel
+@model MM_OPR_RATIO_TARGET
+
+@{
+    ViewBag.Title = "FILM MIB OPERATION RATIO TARGET SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+
+<style>
+
+    .smallDDL {
+        width: 35% !important;
+        min-width: 35%;
+    }
+
+    .table {
+        width: 25% !important;
+    }
+
+    .TableTextbox {
+        height: auto;
+        padding: 0px 12px;
+    }
+
+    .table-borderless {
+        border: 0 !important;
+    }
+
+        .table-borderless > tbody > tr > td, table > thead > tr > th {
+            border: 0 !important;
+        }
+</style>
+
+<h2>
+    @ViewBag.Title
+</h2>
+<hr />
+@using (Html.BeginForm("OPR_RATIO_TARGET", "MstMain", FormMethod.Post))
+{
+    <div>
+        <div class="row">
+            <div class="col-sm-1">
+                <label for="YEAR" style="padding-right:0px;padding-left:0px">Period :</label>
+            </div>
+            <div class="form-group col-sm-3">
+                <div>
+                    @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+                    <br />
+                    @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                    <br />
+                    @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                </div>
+            </div>
+            @*<div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>*@
+        </div>
+    </div>
+}
+<div id="grid">
+    @*@grid.GetHtml(
+            tableStyle: "table-borderless table col-sm-3",
+            headerStyle: "head",
+            numericLinksCount:5,
+            mode: WebGridPagerModes.All,
+            firstText:"First",
+            previousText: "Previous",
+            nextText: "Next",
+            lastText:"Last",
+            alternatingRowStyle: "alt",
+            columns: grid.Columns(
+            grid.Column("", style: "" , format: @<text>@item.ITEM</text>),
+            grid.Column("Target", style: "", format: @<text> <input class="form-control TableTextbox onlyDouble" value="@item.TARGET_BUDGET" id="txtBudget_@item.ITEM" /> </text>))
+        )*@
+    @{
+        Html.RenderPartial("_OprRatioTargetPartial");
+    }
+</div>
+<div class="col-sm-3">
+    <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+</div>
+@{
+    if (ViewBag.Result != "" && ViewBag.Result != null)
+    {
+        <script type="text/javascript" language="javascript">
+            alert('@ViewBag.Result');
+        </script>
+    }
+}
+<script>
+    function getNewData() {
+
+        var year = document.getElementById("YEAR").value;
+        var month = document.getElementById("MONTH").value;
+
+
+        var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("OPR_RATIO_TARGET")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+    }
+</script>
+<script>
+
+    function submitForm() {
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+        var ITEM = new Array();
+        var TARGET_BUDGET = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtBudget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var sc = split[1].split('/');
+
+                    ITEM.push(sc[0]);
+                    TARGET_BUDGET.push(oInputs[i].value);
+                }
+            }
+        }
+
+        var error = 'N';
+
+        for (i = 0; i < ITEM.length; i++) {
+            var json = {
+                "YEAR": YEAR,
+                "MONTH": MONTH,
+                "ITEM": ITEM[i],
+                "TARGET_BUDGET": TARGET_BUDGET[i]
+            }
+
+            $.ajax({
+		        url: "@Url.Action("OPR_RATIO_TARGET_MAINT")",
+		        type: "POST",
+		        data: JSON.stringify({
+                    OPR_RATIO_TARGET: json
+		        }),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data != "Data saved successfully.") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+		    });
+        }
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+
+</script>

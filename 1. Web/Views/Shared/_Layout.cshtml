@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <!--new 20190612-->
+    <link rel="stylesheet" href="~/Content/Main.css" />
+    <script src="~/Scripts/Main.js"></script>
+    <!--new 20190612 end-->
+
+    <style type="text/css">
+        .navbar-toggle {
+            display: inline-block !important;
+            float: left;
+        }
+        .navbar-brand:hover {
+            color: black !important;
+        }
+
+        .fa-sign-out {
+            padding-top: 10px;
+            padding-right: 5px;
+            text-decoration: none;
+            float: right;
+        }
+
+            .fa-sign-out:hover {
+                text-decoration: none;
+            }
+
+        .displayLogin {
+            padding-right: 10px;
+            font-size: large;
+            font-weight: normal;
+            line-height: 50px;
+            /*padding-bottom: 100px;*/
+        }
+
+        .navbar-header {
+            float: left;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top height5">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            @Html.ActionLink("FILM LMI", "Menu", "Home", new { area = "" }, new { @class = "navbar-brand hidden-xs" })
+            <div style="float:right">
+                <label class="displayLogin hidden-xs">@(Context.Session.GetObject<ACL_UserObj>("AclUser")?.EMP_NAME)</label>
+                @Html.ActionLink(" ", "Login", "Home", new { area = "" }, new { @class = "fa fa-sign-out fa-2x signout" })
+            </div>
+        </div>
+
+    </div>
+    <div class="full-height">
+        <div class="maincover LeftBar collapse in">
+            <div class="navbar-collapse collapse">
+                <div class="Ul-span">Modules</div>
+                <div id="sidebar"></div>
+                <div class="Ul-span">Settings</div>
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <i class="fa fa-gears" style="padding-right:10px"></i>@Html.ActionLink("Change Password", "ChangePassword", "Home", "", new { target = "iframe" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="maincover RightBar">
+            <div class=" body-content">
+                    @RenderBody()
+ 
+
+                <footer>
+                    <div>
+                        <small>Copyright &copy; @DateTime.Now.Year - TORAY MALAYSIA SYSTEMS SOLUTION SDN. BHD. &#xae;</small>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+<script type="text/javascript" >
+    $(document).ready(function() {
+        $("#sidebar").load('@Url.Action("SideBar", "Home")');
+    });
+</script>
+</html>

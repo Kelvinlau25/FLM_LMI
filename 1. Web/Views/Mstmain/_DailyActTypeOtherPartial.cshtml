@@ -1,0 +1,27 @@
+﻿@using MstMainModel
+@model MM_DAILY_ACT_TYPE_OTHER
+<script src="~/Scripts/Main.js"></script>
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date">THICK</th>
+            <th class="target-date">TYPE</th>
+            <th class="target-input">CR Act</th>
+            <th class="target-input">BMIX Act</th>
+            <th class="target-input">Speed Plan</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_LMI_DAILY_ACT_TYPE_OTHER)
+        {
+            <tr>
+                <td class="target-date">@item.THICK</td>
+                <td class="target-date">@item.TYPE</td>
+                <td class="target-input"><input class="onlyNumber" value="@item.CR_ACT" id="txtTarget_C_@(item.THICK)_@(item.TYPE)" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.BMIX_ACT" id="txtTarget_B_@(item.THICK)_@(item.TYPE)" /></td>
+                <td class="target-input"><input class="onlyNumber" value="@item.SPEED_PLAN" id="txtTarget_S_@(item.THICK)_@(item.TYPE)" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

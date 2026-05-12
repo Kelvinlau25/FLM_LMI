@@ -1,0 +1,32 @@
+﻿@using MstMainModel
+@model MM_SALES_ORDER_GROUP
+<script src="~/Scripts/Main.js"></script>
+
+@if (ViewBag.ResultSaved != "" && ViewBag.ResultSaved != null)
+{
+    <script type="text/javascript" language="javascript">
+        alert("@ViewBag.ResultSaved");
+    </script>
+}
+
+<table class="table">
+    <thead>
+        <tr class="head">
+            <th class="target-date"></th>
+            <th class="target-input">Prod Line</th>
+            <th class="target-input">Group Name</th>
+            <th class="target-input">Report Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LIST_LMI_SALES_ORDER_GROUP)
+        {
+            <tr>
+                <td class="target-date"><button onclick="remove('@item.ID_LMI_SALES_GROUP')">Delete</button></td>
+                <td class="target-input">@item.PROD_LINE</td>
+                <td class="target-input">@item.GROUP_NAME</td>
+                <td class="target-input">@item.RPT_GROUP</td>
+            </tr>
+        }
+    </tbody>
+</table>

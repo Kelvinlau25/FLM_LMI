@@ -1,0 +1,305 @@
+﻿@using MstMainModel
+@model MM_DAILY_BUDGET_TIME
+
+@{
+    ViewBag.Title = "FILM DAILY BUDGET TIME LIST SETTING";
+    Layout = "~/Views/Shared/_Layout_iFrame.cshtml";
+}
+<style>
+    .smallDDL {
+        width: 35% !important;
+        min-width: 35%;
+    }
+
+    .table {
+        width: 100% !important;
+    }
+
+    .target-date {
+        width: 8% !important;
+        min-width: 8%;
+    }
+
+    .target-input {
+        width: 8% !important;
+        min-width: 8% !important;
+    }
+
+    .table > tbody > tr > td, table > thead > tr > th {
+        border: 1px solid #000 !important;
+    }
+
+    .table > thead > tr > th {
+        text-align: center;
+    }
+
+    .table > thead > tr > td {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    table td {
+        position: relative;
+    }
+
+        table td input {
+            text-align: right;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            resize: none;
+            width: 90%;
+            padding: 0.3rem;
+            margin: 0.2rem 0.5rem;
+            border: 1px solid #ddd;
+        }
+</style>
+<h2>FILM DAILY BUDGET TIME LIST SETTING</h2>
+<hr />
+@*@using (Html.BeginForm("DAILY_BUDGET_TIME", "Mstmain", FormMethod.Post))
+    {
+        <div>
+            <div class="row">
+                <div class="col-sm-1">
+                    <label for="YEAR">Period :</label>
+                </div>
+                <div class="form-group col-sm-3">
+                    <div class="row">
+                        @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" }))
+                        <br />
+                        @(Html.ValidationMessageFor(model => model.MONTH, "", new { @class = "text-danger" }))
+                    </div>
+                    <div class="row">
+                        @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL" }))
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </div>
+            </div>
+        </div>
+    }*@
+@using (Html.BeginForm("DAILY_BUDGET_TIME", "Mstmain", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <label for="YEAR" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">Period :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.YEAR, new SelectList(ViewBag.YearDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" })) / @(Html.DropDownListFor(model => model.MONTH, new SelectList(ViewBag.MonthDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="FMMCCODE" class="col-md-1 control-label" style="padding-right:0px;padding-left:0px">FM :</label>
+        <div class="col-md-3">
+            @(Html.DropDownListFor(model => model.FMMCCODE, new SelectList(ViewBag.FmmccodeDDL), new { @class = "form-control smallDDL", @onchange = "getNewData()" }))
+        </div>
+    </div>
+    @*<div class="form-group">
+        <div class="col-md-offset-1 col-md-3">
+            <button type="submit" class="btn btn-primary">View</button>
+        </div>
+    </div>*@
+}
+    <div id="grid">
+
+        @{
+            Html.RenderPartial("_DailyBudgetTimePartial");
+        }     
+    </div>
+<div class="row">
+    <div class="col-md-3">
+        <button onclick="submitForm();" class="btn btn-primary pull-right">Save</button>
+    </div>
+</div>
+<br />
+<br />
+<script>
+var getNewDataTimer = null;
+
+function getNewData() {
+    clearTimeout(getNewDataTimer);
+    getNewDataTimer = setTimeout(function () {
+    var year = document.getElementById("YEAR").value;
+    var month = document.getElementById("MONTH").value;
+    var fmmmccode = document.getElementById("FMMCCODE").value;
+
+
+    var mib = {
+            //ACTIONTYPE: "View",
+            YEAR: year,
+            MONTH: month,
+            FMMCCODE: fmmmccode
+        };
+
+        console.log(mib)
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("DAILY_BUDGET_TIME")',
+            data: '{"model": ' + JSON.stringify(mib) + '}',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+                //alert("Record successfully saved!")
+                $('#grid').html(data)
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr)
+                console.log(ajaxOptions)
+                console.log(thrownError)
+            }
+        });
+        }, 300);
+    }
+</script>
+<script>
+    function submitForm() {
+
+        var fmmmccode = document.getElementById("FMMCCODE").value;
+        var YEAR = document.getElementById("YEAR").value;
+        var MONTH = document.getElementById("MONTH").value;
+
+        var SDATE = new Array();
+        var PROD_DAY = new Array();
+        var UTILITY_DAY = new Array();
+        var TEST_DAY = new Array();
+        var TYPE_CHANGE = new Array();
+        var FILTER_CHANGE = new Array();
+        var FILM_BREAK = new Array();
+        var MC_TROUBLE = new Array();
+        var CLEANING = new Array();
+        var OTHER = new Array();
+        var SD = new Array();
+        var WAIT = new Array();
+
+        var oInputs = new Array();
+        oInputs = document.getElementsByTagName('input');
+
+        for (i = 0; i < oInputs.length; i++) {
+            if (oInputs[i].type == 'text') {
+                if (oInputs[i].id.includes('txtTarget_')) {
+                    var split = oInputs[i].id.split('_');
+                    var target = split[1];
+                    var strDate = split[2];
+
+                    // date - format as YYYY-MM-DD string to avoid timezone issues
+                    var year = strDate.substring(0, 4);
+                    var month = strDate.substring(4, 6);
+                    var day = strDate.substring(6, 8);
+
+                    // Create date string in YYYY-MM-DD format (no timezone conversion)
+                    var dateString = year + '-' + month + '-' + day;
+                    if (SDATE.indexOf(dateString) === -1) {
+                        SDATE.push(dateString);
+                    }
+
+                    if (target == "prodDay") {
+                        PROD_DAY.push(oInputs[i].value);
+                    }
+
+                    if (target == "utilityDay") {
+                        UTILITY_DAY.push(oInputs[i].value);
+                    }
+
+                    if (target == "testDay") {
+                        TEST_DAY.push(oInputs[i].value);
+                    }
+
+                    if (target == "typeChange") {
+                        TYPE_CHANGE.push(oInputs[i].value);
+                    }
+
+                    if (target == "filterChange") {
+                        FILTER_CHANGE.push(oInputs[i].value);
+                    }
+
+                    if (target == "filmBreak") {
+                        FILM_BREAK.push(oInputs[i].value);
+                    }
+                    if (target == "mcTrouble") {
+                        MC_TROUBLE.push(oInputs[i].value);
+                    }
+
+                    if (target == "cleaning") {
+                        CLEANING.push(oInputs[i].value);
+                    }
+
+                    if (target == "others") {
+                        OTHER.push(oInputs[i].value);
+                    }
+
+                    if (target == "sd") {
+                        SD.push(oInputs[i].value);
+                    }
+
+                    if (target == "wait") {
+                        WAIT.push(oInputs[i].value);
+                    }
+                }
+            }
+        }
+
+        var error = 'N';
+        var LMI_STOCK_CONTROL_LIST_BUDGET = new Array();
+
+        for (i = 0; i < SDATE.length; i++) {
+            var json = {
+                "SDATE": SDATE[i],
+                "PROD_DAYS": PROD_DAY[i],
+                "UTILITY_DAYS": UTILITY_DAY[i],
+                "TEST_DAYS": TEST_DAY[i],
+                "TYPE_CHANGE": TYPE_CHANGE[i],
+                "FITLER_CHANGE": FILTER_CHANGE[i],
+                "FILM_BREAK": FILM_BREAK[i],
+                "MC_TROUBLE": MC_TROUBLE[i],
+                "CLEANING": CLEANING[i],
+                "OTHERS": OTHER[i],
+                "SD": SD[i],
+                "WAIT": WAIT[i]
+            }
+
+            LMI_STOCK_CONTROL_LIST_BUDGET.push(json);
+        }
+
+        var modl = {
+            "YEAR": YEAR,
+            "MONTH": MONTH,
+            "FMMCCODE": fmmmccode,
+            "LIST_LMI_DAILY_BUDGET_TIME": LMI_STOCK_CONTROL_LIST_BUDGET
+        }
+        console.log(modl);
+        $.ajax({
+		        url: "@Url.Action("DAILY_BUDGET_TIME_MAINT")",
+		        type: "POST",
+                data: JSON.stringify(modl),
+		        contentType: "application/json; charset=utf-8",
+		        dataType: "json",
+		        error: function (data) {
+		            alert("Posting Error. Please contact TMS Administrator.\nCheck next tab for more info.");
+                    error = 'Y';
+
+		            var newWindow = window.open();
+                    newWindow.document.write(data.responseText);
+                    return;
+		            },
+                success: function (data) {
+                    if (data.RESULT != "OK") {
+                        console.log(data);
+                        alert("Record failed to save.");
+                        return;
+                    }
+		        }
+        });
+
+        if (error == 'N') {
+            alert('Record save successfully.');
+        } else {
+            alert('Record failed to save.');
+        }
+    }
+</script>
+

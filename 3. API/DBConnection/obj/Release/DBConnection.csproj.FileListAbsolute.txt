@@ -1,0 +1,6 @@
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\bin\Release\DBConnection.dll
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\bin\Release\DBConnection.pdb
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\obj\Release\DBConnection.csprojAssemblyReference.cache
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\obj\Release\DBConnection.csproj.CoreCompileInputs.cache
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\obj\Release\DBConnection.dll
+D:\KSFoong\Source Code\5 PFR LMI GO CLOUD\MIB_FILM_CLD_API\DBConnection\obj\Release\DBConnection.pdb
