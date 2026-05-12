@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "G8DaV54a/o0=",
+  "dgSpecHash": "/SqcYI1qbWQ=",
   "success": true,
-  "projectFilePath": "C:\\CONVERTED PROJECT\\FLM_LMI\\3. API\\DBConnection\\DBConnection.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/runner/work/FLM_LMI/FLM_LMI/3. API/DBConnection/DBConnection.csproj",
+  "expectedPackageFiles": [
+    "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages/microsoft.netcore.app.ref/8.0.25/microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages/microsoft.aspnetcore.app.ref/8.0.25/microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

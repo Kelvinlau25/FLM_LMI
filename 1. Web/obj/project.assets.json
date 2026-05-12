@@ -1730,33 +1730,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ong_chun_zhao\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\NET8 PROJECT\\FLM_LMI\\1. Web\\MIB_FILM_CLD_MM_MVC.csproj",
+      "projectUniqueName": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj",
       "projectName": "MIB_FILM_CLD_MM_MVC",
-      "projectPath": "C:\\NET8 PROJECT\\FLM_LMI\\1. Web\\MIB_FILM_CLD_MM_MVC.csproj",
-      "packagesPath": "C:\\Users\\ong_chun_zhao\\.nuget\\packages\\",
-      "outputPath": "C:\\NET8 PROJECT\\FLM_LMI\\1. Web\\obj\\",
+      "projectPath": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj",
+      "packagesPath": "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages",
+      "outputPath": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ong_chun_zhao\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1775,7 +1766,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1801,6 +1792,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1809,7 +1814,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

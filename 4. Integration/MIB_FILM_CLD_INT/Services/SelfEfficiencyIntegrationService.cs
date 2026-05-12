@@ -21,28 +21,28 @@ namespace MIB_FILM_CLD_INT.Services
             Run(DateTime.Now.AddDays(-1), includePview2061: true);
         }
 
-        private void Run(DateTime dateParam, bool includePview2061)
+        private void Run(DateTime startDate, bool includePview2061)
         {
             DateTime start = DateTime.Now;
             DataTable prodData = GetProdData();
 
             for (int i = 0; i <= 2; i++)
             {
-                dateParam = dateParam.AddDays(i);
-                string yearMonth = dateParam.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
-                string day = dateParam.Day.ToString(CultureInfo.InvariantCulture);
+                DateTime runDate = startDate.AddDays(i);
+                string runDateText = runDate.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+                string day = runDate.Day.ToString(CultureInfo.InvariantCulture);
 
                 foreach (string filmMakingMachineCode in FilmMakingMachineCodes)
                 {
-                    Pview3141(yearMonth, filmMakingMachineCode, day);
-                    PviewFm(yearMonth, filmMakingMachineCode, day);
-                    PviewFm2(yearMonth, filmMakingMachineCode, day);
-                    PviewHopper(yearMonth, filmMakingMachineCode, day);
-                    Pview3015(yearMonth, filmMakingMachineCode, day);
+                    Pview3141(runDateText, filmMakingMachineCode, day);
+                    PviewFm(runDateText, filmMakingMachineCode, day);
+                    PviewFm2(runDateText, filmMakingMachineCode, day);
+                    PviewHopper(runDateText, filmMakingMachineCode, day);
+                    Pview3015(runDateText, filmMakingMachineCode, day);
 
                     if (includePview2061)
                     {
-                        Pview2061(yearMonth, filmMakingMachineCode, day);
+                        Pview2061(runDateText, filmMakingMachineCode, day);
                     }
 
                     DataTable typeData = GetTypeData(filmMakingMachineCode);
@@ -55,23 +55,23 @@ namespace MIB_FILM_CLD_INT.Services
                             string type = Convert.ToString(typeRow["TYPE"], CultureInfo.InvariantCulture) ?? string.Empty;
                             string thick = Convert.ToString(typeRow["THICK"], CultureInfo.InvariantCulture) ?? string.Empty;
 
-                            CalcSummary(yearMonth, filmMakingMachineCode, prod, type, thick);
-                            CalcRawUsage(yearMonth, filmMakingMachineCode, prod, type, thick);
-                            CalcRawComp(yearMonth, filmMakingMachineCode, prod, type, thick);
+                            CalcSummary(runDateText, filmMakingMachineCode, prod, type, thick);
+                            CalcRawUsage(runDateText, filmMakingMachineCode, prod, type, thick);
+                            CalcRawComp(runDateText, filmMakingMachineCode, prod, type, thick);
                         }
                     }
 
-                    CalcSummaryTtl(yearMonth, filmMakingMachineCode);
+                    CalcSummaryTtl(runDateText, filmMakingMachineCode);
 
                     foreach (DataRow prodRow in prodData.Rows)
                     {
                         string prod = Convert.ToString(prodRow["PROD"], CultureInfo.InvariantCulture) ?? string.Empty;
-                        CalcRawCalc(yearMonth, filmMakingMachineCode, prod);
+                        CalcRawCalc(runDateText, filmMakingMachineCode, prod);
                     }
 
-                    CalcWaste(yearMonth, filmMakingMachineCode, "C");
-                    CalcWaste(yearMonth, filmMakingMachineCode, "B");
-                    CalcQty(yearMonth, filmMakingMachineCode);
+                    CalcWaste(runDateText, filmMakingMachineCode, "C");
+                    CalcWaste(runDateText, filmMakingMachineCode, "B");
+                    CalcQty(runDateText, filmMakingMachineCode);
                 }
             }
 
