@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj": {}
+    "/home/runner/work/FLM_LMI/FLM_LMI/4. Integration/MIB_FILM_CLD_INT/MIB_FILM_CLD_INT.csproj": {}
   },
   "projects": {
-    "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj": {
+    "/home/runner/work/FLM_LMI/FLM_LMI/4. Integration/MIB_FILM_CLD_INT/MIB_FILM_CLD_INT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj",
-        "projectName": "MIB_FILM_CLD_MM_MVC",
-        "projectPath": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/MIB_FILM_CLD_MM_MVC.csproj",
+        "projectUniqueName": "/home/runner/work/FLM_LMI/FLM_LMI/4. Integration/MIB_FILM_CLD_INT/MIB_FILM_CLD_INT.csproj",
+        "projectName": "MIB_FILM_CLD_INT",
+        "projectPath": "/home/runner/work/FLM_LMI/FLM_LMI/4. Integration/MIB_FILM_CLD_INT/MIB_FILM_CLD_INT.csproj",
         "packagesPath": "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages",
-        "outputPath": "/home/runner/work/FLM_LMI/FLM_LMI/1. Web/obj/",
+        "outputPath": "/home/runner/work/FLM_LMI/FLM_LMI/4. Integration/MIB_FILM_CLD_INT/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/runner/.nuget/NuGet/NuGet.Config"
@@ -46,11 +46,11 @@
           "dependencies": {
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[5.*, )"
+              "version": "[7.0.1, )"
             },
-            "Newtonsoft.Json": {
+            "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
-              "version": "[13.*, )"
+              "version": "[23.26.200, )"
             }
           },
           "imports": [
