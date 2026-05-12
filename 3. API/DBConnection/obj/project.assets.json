@@ -8,24 +8,33 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages": {}
+    "C:\\Users\\ong_chun_zhao\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/runner/work/FLM_LMI/FLM_LMI/3. API/DBConnection/DBConnection.csproj",
+      "projectUniqueName": "C:\\CONVERTED PROJECT\\FLM_LMI\\3. API\\DBConnection\\DBConnection.csproj",
       "projectName": "DBConnection",
-      "projectPath": "/home/runner/work/FLM_LMI/FLM_LMI/3. API/DBConnection/DBConnection.csproj",
-      "packagesPath": "/tmp/codeql-scratch-c984278edf3eb74d/dbs/csharp/working/packages",
-      "outputPath": "/home/runner/work/FLM_LMI/FLM_LMI/3. API/DBConnection/obj/",
+      "projectPath": "C:\\CONVERTED PROJECT\\FLM_LMI\\3. API\\DBConnection\\DBConnection.csproj",
+      "packagesPath": "C:\\Users\\ong_chun_zhao\\.nuget\\packages\\",
+      "outputPath": "C:\\CONVERTED PROJECT\\FLM_LMI\\3. API\\DBConnection\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/runner/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\ong_chun_zhao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -44,7 +53,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -60,22 +69,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.25, 8.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.25, 8.0.25]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
